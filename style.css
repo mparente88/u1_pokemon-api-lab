@@ -1,0 +1,89 @@
+body {
+    background-color: #333;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 20% 40% 40%;
+    background: #333;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    font-family: 'Gill Sans';
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, span {
+    font-family: 'Gill Sans';
+}
+/* https://pngimg.com/d/pokeball_PNG30.png */
+#pokeMain {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    grid-row-start: 2;
+}
+
+
+
+#clickHere {
+    background:url(https://pngimg.com/d/pokeball_PNG30.png) no-repeat;
+    cursor: grab;
+    background-size:contain;
+    width:150px;
+    height:150px;
+    border: none;
+}
+
+#abilitiesChart {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+img {
+    display:flex;
+    width:15vw;
+    height:15vw;
+    position:relative;
+    align-self: center;
+    justify-content: center;
+}
+
+#pokeMeasurements {
+    display: flex;
+    position: relative;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#pokeAbilitiesDiv {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+
+#pokeStatsDiv {
+    display: grid;
+    background-color: #333;
+    grid-template-columns: 1fr 1fr;
+    border: solid black;
+    border-radius: 30px;
+    border-width: 10px;
+    margin-left: 0%;
+    padding-left: 0%;
+    max-width: 500px;
+}
+
+#pokeImages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-row-start: 2;
+}

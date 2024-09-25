@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>PokéDex</title>
+</head>
+<body>
+    <main id="mainBox">
+        <form>
+            <input type="text"  value="" placeholder="Enter Name or ID#"  id="searchBar">
+            <div><input type="button" id="clickHere"></div>
+        </form>
+        
+        <div id="pokeMain">
+            <h2 id="pokemonName">Name</h2>
+            <span id="pokemonTypes">Types</span>
+            <div id="pokeImages">
+                <img id="pokemonImage" src=""/>
+                <img id="pokemonImageRear" src=""/>
+            </div>
+        </div>
+
+        <div id="pokeMeasurements">
+        <h3 id="pokemonHeight">Height:</h3>
+        <h3 id="pokemonWeight">Weight:</h3>
+        </div>
+
+        <div id="pokeAbilitiesDiv">
+        <h3 id="pokemonAbilities"></h3>
+        <h4 group="abilities" id="abilityOne"></h4>
+        <h4 group="abilities" id="abilityTwo"></h4>
+        <h4 group="abilities" id="abilityThree"></h4>
+        </div>
+        <div id="pokeStatsDiv">
+            <h4 group="stats" id="statHP"></h4>
+            <h4 group="stats" id="statATT"></h4>
+            <h4 group="stats" id="statDEF"></h4>
+            <h4 group="stats" id="statSPATT"></h4>
+            <h4 group="stats" id="statSPDEF"></h4>
+            <h4 group="stats" id="statSPD"></h4>
+        </div>
+    </main>
+</body>
+</html>
+
