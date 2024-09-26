@@ -1,4 +1,12 @@
 //getting
+    let pokemonList = []
+
+    const loadPokemonNames = async () => {
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=1000`);
+        pokemonList = response.data.results.map(pokemon => pokemon.name);
+    }
+    window.onload = loadPokemonNames;
+
     const buttonElement = document.querySelector("#clickHere")
     const pokemonNameElement = document.querySelector("#pokemonName")
     const pokemonImageElement = document.querySelector("#pokemonImage")
@@ -20,6 +28,9 @@
     const pokeStatsBG = document.querySelector(`#pokeStatsDiv`)
     let pokeFrontImage = ""
     let pokeBackImage = ""
+    const turnLeftElement = document.querySelector(`#turnLeft`)
+    const turnRightElement = document.querySelector(`#turnRight`)
+
 //setting
 async function pokeSearch () {
     let textInputElement = document.querySelector("#searchBar").value.toLowerCase()
@@ -122,7 +133,7 @@ pokeTypesStatsObject = {
     "PSYCHIC": "#bb005c",
     "ICE": "#2e43dd",
     "DRAGON": "#000e3b",
-    "DARK": "#222",
+    "DARK": "#111",
     "FAIRY": "#aa003b",    
 }
 
@@ -143,7 +154,7 @@ pokeTypesObject = {
     "PSYCHIC": "#bb008c",
     "ICE": "#4e76dd",
     "DRAGON": "#001e6b",
-    "DARK": "#333",
+    "DARK": "#222",
     "FAIRY": "#aa005b",
 }
 
@@ -186,3 +197,38 @@ pokemonRearImageElement.addEventListener(`click`, async () => {
     }
     pokemonRearImageElement.setAttribute(`src`, pokeBackImage)
 })
+
+//ChatGPT coached me through building and debugging this function
+//But it was the only part of the project where I used A.I. for help.
+
+const autocomplete = () => {
+    const input = inputBox.value.toLowerCase()
+    const suggestionsDiv = document.querySelector(`#suggestions`)
+
+    suggestionsDiv.innerHTML = ``
+
+    if (input.length === 0) {
+        suggestionsDiv.style.display = `none`
+        return
+    }
+
+    const filteredList = pokemonList.filter(pokemon => pokemon.startsWith(input))
+
+    if (filteredList.length > 0) {
+        filteredList.forEach(pokemon => {
+            const suggestionItem = document.createElement(`div`)
+            suggestionItem.textContent = pokemon
+            suggestionItem.onclick = () => {
+                inputBox.value = pokemon
+                suggestionsDiv.style.display = 'none'
+                pokeSearch()
+            }
+            suggestionsDiv.appendChild(suggestionItem)
+        })
+        suggestionsDiv.style.display = `block`
+    } else {
+        suggestionsDiv.style.display = `none`
+    }
+}
+
+inputBox.addEventListener(`input`, autocomplete)

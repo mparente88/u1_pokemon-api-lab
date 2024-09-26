@@ -10,12 +10,14 @@
 </head>
 <body>
     <main id="mainBox">
-        <form>
-            <input type="text"  value="" placeholder="Enter Name or ID#"  id="searchBar">
-            <div><input type="button" id="clickHere"></div>
-        </form>
-        
-        <div id="pokeMain">
+        <div id="mainBoxContainer">
+            <form>
+                <input type="text"  value="" placeholder="Enter Name or ID#"  id="searchBar">
+                <div id="suggestions"></div>
+                <div><input type="button" id="clickHere"></div>
+            </form>
+        </div>
+        <div id="pokeMainContainer">
             <h2 id="pokemonName">Name</h2>
             <span id="pokemonTypes">Types</span>
             <div id="pokeImages">
@@ -35,6 +37,7 @@
         <h4 group="abilities" id="abilityTwo"></h4>
         <h4 group="abilities" id="abilityThree"></h4>
         </div>
+        <div id="pokeStatsContainer">
         <div id="pokeStatsDiv">
             <h4 group="stats" id="statHP"></h4>
             <h4 group="stats" id="statATT"></h4>
@@ -42,6 +45,7 @@
             <h4 group="stats" id="statSPATT"></h4>
             <h4 group="stats" id="statSPDEF"></h4>
             <h4 group="stats" id="statSPD"></h4>
+        </div>
         </div>
     </main>
 </body>
